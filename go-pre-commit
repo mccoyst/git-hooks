@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -n "$(gofmt -l *.go)" ]; then 
+	echo 'You should run go fmt.' 1>&2 
+	exit 1 
+fi
+
+go test -cover
